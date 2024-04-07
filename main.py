@@ -2,18 +2,6 @@ import streamlit as st
 import requests
 import pandas as pd
 
-def fetch_data(url):
-    # Directly fetch data as DataFrame
-    df_list = pd.read_html(url)
-    if df_list:
-        df = df_list[0]  # Assuming the desired table is the first one on the page
-        return df
-    else:
-        return None
-
-def display_data(data):
-    df = pd.DataFrame(data['records'])
-    st.write(df)
 def home_section():
     st.title("Home")
     st.write("Welcome to the Home section.")
@@ -27,11 +15,7 @@ def energy_consumption_section():
     st.write("This subsection provides information about Electricity.")
 
     # Allow user to input URL dynamically
-    url = st.text_input("Enter API URL",
-                        "https://opendata.agenceore.fr/explore/embed/dataset/consommation-annuelle-d-electricite-et-gaz-par-region/table/")
 
-    data = fetch_data(url)
-    display_data(data)
 def energy_production_section():
     st.title("Energy Production")
     st.write("This section provides information about energy production.")
