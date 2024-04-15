@@ -16,6 +16,8 @@ def energy_consumption_section():
 
     # Allow user to input URL dynamically
 
+
+
 def energy_production_section():
     st.title("Energy Production")
     st.write("This section provides information about energy production.")
